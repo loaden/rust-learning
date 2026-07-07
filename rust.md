@@ -13,22 +13,31 @@
 * 可能需要额外安装格式化工具：`$ rustup component add rustfmt`
 * 卸载：`$ rustup self uninstall`
 
+  * rustup 国内镜像
+  
+    ```bash
+    export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+    export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+    ```
+
 ### 1.1.2. VSCode 插件
 
 * 插件安装
   > rust-analyzer、CodeLLDB
 
-### 1.1.3. cargo 启用中科大源
+### 1.1.3. cargo 启用清华源
 
 * 编辑 `~/.cargo/config.toml`
 
 ```toml
 [source.crates-io]
-replace-with = 'ustc'
-[source.ustc]
-registry = "git://mirrors.ustc.edu.cn/crates.io-index/"
-[net]
-git-fetch-with-cli = true
+replace-with = 'mirror'
+
+[source.mirror]
+registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+
+[registries.mirror]
+index = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
 ```
 
 ### 1.1.4. 清理`~/.cargo`缓存
