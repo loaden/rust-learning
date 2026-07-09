@@ -2,14 +2,14 @@ use iced::alignment::Horizontal;
 use iced::widget::{button, checkbox, horizontal_space, slider, text, text_input, toggler};
 use iced::widget::{column, container, row};
 use iced::widget::{Column, Container};
-use iced::window;
+use iced::{Size, window};
 use iced::{executor, Color};
 use iced::{Application, Command, Element, Length, Settings, Theme};
 
 fn main() -> iced::Result {
     let settings = Settings {
         window: window::Settings {
-            size: (800, 450),
+            size: Size {height: 600.0, width: 800.0},
             ..Default::default()
         },
         ..Default::default()
@@ -68,7 +68,7 @@ impl Application for App {
             controls = controls.push(button("Back").on_press(Message::PageBack));
         }
 
-        controls = controls.push(horizontal_space(Length::Fill));
+        controls = controls.push(horizontal_space());
         if steps.can_next() {
             controls = controls.push(button("Next").on_press(Message::PageNext));
         }
@@ -240,7 +240,7 @@ impl<'a> Step {
                 "You can ask Iced to visually explain the layouting of the \
                  different elements comprising your UI!",
             )
-            .push(checkbox("Explain layout", debug, StepMessage::DebugToggled))
+            .push(checkbox("Explain layout", debug))
     }
 
     fn toggler(can_continue: bool) -> Column<'a, StepMessage> {
@@ -279,14 +279,13 @@ impl<'a> Step {
         Self::container("Text input")
             .push("Use a text input to ask for different kinds of information.")
             .push(if is_secure {
-                text_input.password()
+                text_input.secure(is_secure)
             } else {
                 text_input
             })
             .push(checkbox(
                 "Enable password mode",
-                is_secure,
-                StepMessage::ToggleSecureInput,
+                is_secure
             ))
             .push(
                 "A text input produces a message every time it changes. It is \
