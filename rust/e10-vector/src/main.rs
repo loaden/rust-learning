@@ -31,8 +31,8 @@ fn main() {
     }
 
     let mut v = vec![1, 2, 3];
-    let p = &v[0];
     v.push(4);
+    let p = &v[3];
     println!("{}", p);
 }
 
