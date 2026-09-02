@@ -37,7 +37,7 @@ impl Sandbox for Counter {
         }
     }
 
-    fn view(&self) -> Element<Message> {
+    fn view(&self) -> Element<'_, Message> {
         let content = column![
             button("Increment").on_press(Message::IncrementPressed),
             text(self.value).size(50),

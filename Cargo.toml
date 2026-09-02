@@ -11,4 +11,5 @@ name = "rust-learning"
 members = [
     "book/*",
     "examples/*",
+    "iced/*",
 ]
