@@ -49,4 +49,13 @@ fn main() {
     对于特定作用域中的特定数据来说，Rust 允许存在唯一可变引用（mutable reference）或者任意数量的不可变引用（immutable reference），但不能同时存在可变引用和不可变引用。
     引用总是有效的，Rust 编译器会在编译时检查引用的有效性，确保引用不会悬空。
     */
+    // 切片引用
+    println!("切片引用");
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..4];
+    println!("{:?}", slice);
+    let slice = &a[1..=4];
+    println!("{:?}", slice);
+    let slice = &a[..4];
+    println!("{:?}", slice);
 }
