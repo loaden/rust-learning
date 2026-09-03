@@ -1,23 +1,18 @@
-use std::fs::OpenOptions;
-use std::io::{self, Read, Seek, Write};
+fn main() {
+    // 数组定义
+    println!("数组定义");
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("{:?}", a);
+    let b = [0; 5]; // 定义一个包含5个0的数组
+    println!("{:?}", b);
 
-fn main() -> io::Result<()> {
-    let filename = "test.txt";
-    let mut file = OpenOptions::new()
-        .append(true)
-        .read(true)
-        .create(true)
-        .open(filename)?;
-
-    file.write_all(b"test")?;
-    // file.seek(io::SeekFrom::Start(0))?;
-    file.rewind()?;
-
-    let mut buf = String::new();
-    match file.read_to_string(&mut buf) {
-        Ok(n) => println!("f.read_to_string: {}, {}", buf, n),
-        Err(e) => println!("{}", e),
+    // 表达式
+    println!("表达式");
+    let x = {
+        let y = 1;
+        y + 1
     };
-
-    Ok(())
+    println!("{}", x);
+    let x = if x > 1 { 1 } else { 0 };
+    println!("{}", x);
 }
