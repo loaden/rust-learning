@@ -15,4 +15,19 @@ fn main() {
     println!("{}", x);
     let x = if x > 1 { 1 } else { 0 };
     println!("{}", x);
+
+    // 循环遍历
+    println!("循环遍历");
+    for i in 0..5 {
+        print!("{},", i);
+    }
+    println!();
+    for i in a.iter() {
+        print!("{},", i);
+    }
+    println!();
+    for i in a.iter().rev() {
+        print!("{},", i);
+    }
+    println!();
 }
