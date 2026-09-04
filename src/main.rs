@@ -58,4 +58,16 @@ fn main() {
     println!("{:?}", slice);
     let slice = &a[..4];
     println!("{:?}", slice);
+    let slice = &a[2..];
+    println!("{:?}", slice);
+    let slice = &a[..];
+    println!("{:?}", slice);
+    // 字符串切片
+    println!("字符串切片");
+    let s = String::from("hello world");
+    let slice: &str = &s[6..];
+    println!("{:?}", slice);
+    let s = "hello world";
+    let slice: &str = &s[6..];
+    println!("{:?}", slice);
 }
