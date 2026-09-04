@@ -17,13 +17,19 @@ fn main() {
     #[derive(Debug)]
     struct Point(i32, i32, f64);
     let p = Point(12, 12, 15.8);
-    println!("{:?}", p);
+    println!("{:?}, {}-{}-{}", p, p.0, p.1, p.2);
 
     let cr = User::create(String::from("username"));
     println!("{:#?}", cr);
 
     let c = Color(255, 128, 0);
-    println!("{:#?}", c);
+    println!("{:#?}, {}-{}-{}", c, c.0, c.1, c.2);
+
+    let subject = AlwaysEqual;
+    println!("{:#?}", subject);
+    subject.print(5);
+
+    dbg!(&c);
 }
 
 #[derive(Debug)]
@@ -49,3 +55,12 @@ impl User {
 
 #[derive(Debug)]
 struct Color(i32, i32, i32);
+
+#[derive(Debug)]
+struct AlwaysEqual;
+
+impl AlwaysEqual {
+    fn print(&self, count: i32) {
+        println!("AlwaysEqual struct {count}");
+    }
+}
