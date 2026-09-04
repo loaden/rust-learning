@@ -1,4 +1,5 @@
 fn main() {
+    // 文档：cargo doc --open
     // 数组定义
     println!("数组定义");
     let a: [i32; 5] = [1, 2, 3, 4, 5];
