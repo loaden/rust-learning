@@ -71,4 +71,19 @@ fn main() {
     let s = "hello world";
     let slice: &str = &s[6..];
     println!("{:?}", slice);
+    let s = StructExample;
+    s.test();
+    s.hello();
+    s.world();
+}
+
+#[derive(Debug)]
+struct StructExample;
+impl StructExample {
+    // &self 实际上是 self: &Self的缩写
+    fn test(&self) { dbg!(self); }
+    // 在一个 impl 块中， Self 类型是 impl 块的类型的别名
+    fn hello(self: &Self) { dbg!(self); }
+    // 方法的第一个参数必须有一个名为 self 的 Self 类型的参数
+    fn world(self: &StructExample) { dbg!(self); }
 }

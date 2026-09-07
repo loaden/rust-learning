@@ -1,4 +1,5 @@
 fn main() {
+    println!("结构体");
     let u = User {
         username: String::from("Name"),
         email: String::from("test@mail.com"),
@@ -12,24 +13,26 @@ fn main() {
     };
     println!("{:#?}", u2);
     u2.print();
+    dbg!(u2);
+    let cr = User::create(String::from("User::create"));
+    cr.print();
+    dbg!(cr);
 
     // 元组定义风格
+    println!("元组定义风格");
     #[derive(Debug)]
     struct Point(i32, i32, f64);
     let p = Point(12, 12, 15.8);
     println!("{:?}, {}-{}-{}", p, p.0, p.1, p.2);
-
-    let cr = User::create(String::from("username"));
-    println!("{:#?}", cr);
+    dbg!(p);
 
     let c = Color(255, 128, 0);
-    println!("{:#?}, {}-{}-{}", c, c.0, c.1, c.2);
+    println!("{:?}, {}-{}-{}", c, c.0, c.1, c.2);
+    dbg!(c);
 
     let subject = AlwaysEqual;
-    println!("{:#?}", subject);
-    subject.print(5);
-
-    dbg!(&c);
+    let s = dbg!(subject);
+    s.print(5);
 }
 
 #[derive(Debug)]
