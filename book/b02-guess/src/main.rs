@@ -4,14 +4,6 @@ use std::io;
 fn main() {
     let secret_number = rand::random_range(1..=100);
     println!("The secret number was: {}", secret_number);
-    println!(
-        "Uniform i8 sample: {}",
-        match rand::random() {
-            0_i8 => "zero",
-            i if i > 0 => "positive",
-            _ => "negative",
-        }
-    );
 
     loop {
         println!("Please input your guess: ");

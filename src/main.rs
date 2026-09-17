@@ -82,6 +82,16 @@ fn main() {
     s.test();
     s.hello();
     s.world();
+    // 模式匹配
+    println!("模式匹配");
+        println!(
+        "Uniform i8 sample: {}",
+        match rand::random() {
+            0_i8 => "zero",
+            i if i > 0 => "positive",
+            _ => "negative",
+        }
+    );
 }
 
 #[derive(Debug)]
