@@ -1,5 +1,12 @@
+// 文档：cargo doc --open
 fn main() {
-    // 文档：cargo doc --open
+    // 显式转换
+    println!("显式转换");
+    let x = 1.0_f32;
+    let y = 2.0_f32;
+    let z = x as i8 + y as i8;
+    println!("{}", z);
+
     // 数组定义
     println!("数组定义");
     let a: [i32; 5] = [1, 2, 3, 4, 5];
