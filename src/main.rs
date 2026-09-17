@@ -4,7 +4,7 @@ fn main() {
     println!("数组定义");
     let a: [i32; 5] = [1, 2, 3, 4, 5];
     println!("{:?}", a);
-    let b = [0; 5]; // 定义一个包含5个0的数组
+    let b = [0; 6]; // 定义一个包含6个0的数组
     println!("{:?}", b);
 
     // 表达式
@@ -81,9 +81,15 @@ fn main() {
 struct StructExample;
 impl StructExample {
     // &self 实际上是 self: &Self的缩写
-    fn test(&self) { dbg!(self); }
+    fn test(&self) {
+        dbg!(self);
+    }
     // 在一个 impl 块中， Self 类型是 impl 块的类型的别名
-    fn hello(self: &Self) { dbg!(self); }
+    fn hello(self: &Self) {
+        dbg!(self);
+    }
     // 方法的第一个参数必须有一个名为 self 的 Self 类型的参数
-    fn world(self: &StructExample) { dbg!(self); }
+    fn world(self: &StructExample) {
+        dbg!(self);
+    }
 }

@@ -7,7 +7,7 @@ fn main() {
     println!(
         "Uniform i8 sample: {}",
         match rand::random() {
-            0i8 => "zero",
+            0_i8 => "zero",
             i if i > 0 => "positive",
             _ => "negative",
         }
