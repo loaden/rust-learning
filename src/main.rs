@@ -88,7 +88,9 @@ fn main() {
         "Uniform i8 sample: {}",
         match rand::random() {
             0_i8 => "zero",
-            i if i > 0 => "positive",
+            1 | 2 | 3 => "one to three",
+            4..=100 => "four to one hundred",
+            i if i > 100 => "greater than one hundred",
             _ => "negative",
         }
     );
