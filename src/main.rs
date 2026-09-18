@@ -128,6 +128,14 @@ fn main() {
     // const 函数与常量
     println!("const 函数与常量");
     println!("const X = {}", X);
+    // 胖指针
+    println!("胖指针");
+    let p = Box::new(StructExample);
+    (*p).test();
+    p.test();
+    let mut p = Box::new(2026);
+    *p += 1;
+    println!("胖指针 p = {}, {}", p, *p);
 }
 
 #[derive(Debug)]
