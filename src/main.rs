@@ -97,18 +97,21 @@ fn main() {
     );
     // 标签
     println!("标签");
-    'outer: for i in 0..5 {
-        'inner: loop {
-            for j in 0..5 {
-                if i + j >= 5 {
-                    break 'outer;
-                } else if j == 3 {
-                    break 'inner;
-                }
+    let result = 'outer: loop {
+        let random_number: i32 = rand::random_range(1..=5);
+        println!("随机数: {}", random_number);
+        let mut inner_count = 0;
+        'inner: while inner_count < 5 {
+            inner_count += 1;
+            println!("内层计数: {}", inner_count);
+            if inner_count == random_number {
+                break 'outer inner_count; // 跳出外层循环并返回值
+            } else if random_number % 2 == 0 && random_number > 3 {
+                break 'inner; // 跳出内层循环
             }
         }
-        println!("i: {}", i);
-    }
+    };
+    println!("返回值: {}", result); // 输出: 返回值: 3
 }
 
 #[derive(Debug)]
