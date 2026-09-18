@@ -123,6 +123,11 @@ fn main() {
             dbg!(self);
         }
     }
+    // 同一作用域内不支持函数、结构体遮蔽，遮蔽只针对变量
+    // struct StructInner;
+    // const 函数与常量
+    println!("const 函数与常量");
+    println!("const X = {}", X);
 }
 
 #[derive(Debug)]
@@ -141,3 +146,9 @@ impl StructExample {
         dbg!(self);
     }
 }
+
+const fn add(x: i32, y: i32) -> i32 {
+    x + y
+}
+
+const X: i32 = add(1, 2);
