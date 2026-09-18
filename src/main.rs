@@ -112,6 +112,17 @@ fn main() {
         }
     };
     println!("返回值: {}", result); // 输出: 返回值: 3
+    // 函数作用域内定义结构体
+    println!("函数作用域内定义结构体");
+    let s = StructInner;
+    s.test();
+    #[derive(Debug)]
+    struct StructInner;
+    impl StructInner {
+        fn test(&self) {
+            dbg!(self);
+        }
+    }
 }
 
 #[derive(Debug)]
