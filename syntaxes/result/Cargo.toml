@@ -1,0 +1,6 @@
+[package]
+name = "result"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

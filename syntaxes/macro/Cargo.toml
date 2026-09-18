@@ -1,0 +1,7 @@
+[package]
+name = "hello_macro"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+hello_macro_derive = { path = "../derive" }

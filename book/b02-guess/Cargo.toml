@@ -1,7 +1,0 @@
-[package]
-name = "b02-guess"
-version.workspace = true
-edition.workspace = true
-
-[dependencies]
-rand = { workspace = true }

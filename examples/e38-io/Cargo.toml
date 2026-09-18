@@ -1,6 +1,0 @@
-[package]
-name = "e38-io"
-version.workspace = true
-edition.workspace = true
-
-[dependencies]

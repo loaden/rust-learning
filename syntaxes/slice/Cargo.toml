@@ -1,0 +1,6 @@
+[package]
+name = "slice"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

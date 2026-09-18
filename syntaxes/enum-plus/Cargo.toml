@@ -1,0 +1,6 @@
+[package]
+name = "e32-enum-plus"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

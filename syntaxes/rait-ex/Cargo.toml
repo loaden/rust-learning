@@ -1,0 +1,6 @@
+[package]
+name = "e34-trait-ex"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]

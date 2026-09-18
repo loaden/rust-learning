@@ -1,0 +1,10 @@
+[package]
+name = "module"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+name = "core"
+path = "src/core.rs"
+
+[dependencies]

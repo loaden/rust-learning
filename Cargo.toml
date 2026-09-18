@@ -9,7 +9,7 @@ name = "rust-learning"
 
 [workspace]
 members = [
-    "book/*",
+    "syntaxes/*",
     "examples/*",
     "iced/*",
 ]
