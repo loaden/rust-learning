@@ -136,6 +136,12 @@ fn main() {
     let mut p = Box::new(2026);
     *p += 1;
     println!("胖指针 p = {}, {}", p, *p);
+    fn year() -> Box<u16> {
+        let year = Box::new(2026);
+        year
+    }
+    let y = year();
+    println!("胖指针 y = {}, {}", y, *y);
 }
 
 #[derive(Debug)]
