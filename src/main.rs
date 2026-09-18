@@ -1,5 +1,6 @@
-// 文档：cargo doc --open
 fn main() {
+    // 文档：cargo doc --open
+    println!("文档：cargo doc --open");
     // 显式转换
     println!("显式转换");
     let x = 1.0_f32;
@@ -84,7 +85,7 @@ fn main() {
     s.world();
     // 模式匹配
     println!("模式匹配");
-        println!(
+    println!(
         "Uniform i8 sample: {}",
         match rand::random() {
             0_i8 => "zero",
@@ -94,6 +95,20 @@ fn main() {
             _ => "negative",
         }
     );
+    // 标签
+    println!("标签");
+    'outer: for i in 0..5 {
+        'inner: loop {
+            for j in 0..5 {
+                if i + j >= 5 {
+                    break 'outer;
+                } else if j == 3 {
+                    break 'inner;
+                }
+            }
+        }
+        println!("i: {}", i);
+    }
 }
 
 #[derive(Debug)]
