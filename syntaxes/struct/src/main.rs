@@ -19,6 +19,9 @@ fn main() {
     dbg!(cr);
 
     // 元组定义风格
+    // 元组结构体相当于给元组带上具体名称，提升类型安全性
+    // struct RGB(i32, i32, i32);
+    // struct Info(i32, i32, i32);
     println!("元组定义风格");
     #[derive(Debug)]
     struct Point(i32, i32, f64);
