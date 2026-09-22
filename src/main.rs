@@ -142,6 +142,9 @@ fn main() {
     }
     let y = year();
     println!("胖指针 y = {}, {}", y, *y);
+    // 输出地址
+    println!("输出地址");
+    println!("胖指针 p 地址 = {:p}", p);
 }
 
 #[derive(Debug)]
