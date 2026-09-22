@@ -1,4 +1,6 @@
 fn main() {
+    // 集合字符串
+    println!("集合字符串");
     let s1 = "Hello".to_string();
     let s2 = String::from("World");
     println!("{}, {}", s1, s2);
