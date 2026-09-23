@@ -491,10 +491,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "closure"
-version = "0.3.0"
-
-[[package]]
 name = "codespan-reporting"
 version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -514,10 +510,6 @@ dependencies = [
  "bytes",
  "memchr",
 ]
-
-[[package]]
-name = "command"
-version = "0.3.0"
 
 [[package]]
 name = "concurrent-queue"
@@ -733,10 +725,6 @@ name = "dtor"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "edf234dd1594d6dd434a8fb8cada51ddbbc593e40e4a01556a0b31c62da2775b"
-
-[[package]]
-name = "e32-enum-plus"
-version = "0.3.0"
 
 [[package]]
 name = "e34-trait-ex"
@@ -1094,14 +1082,6 @@ name = "glam"
 version = "0.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "151665d9be52f9bb40fc7966565d39666f2d1e69233571b71b87791c7e0528b3"
-
-[[package]]
-name = "global"
-version = "0.3.0"
-dependencies = [
- "lazy_static",
- "once_cell",
-]
 
 [[package]]
 name = "glow"
@@ -1602,12 +1582,6 @@ dependencies = [
  "arrayvec",
  "smallvec",
 ]
-
-[[package]]
-name = "lazy_static"
-version = "1.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
 
 [[package]]
 name = "libc"
@@ -2447,6 +2421,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "process"
+version = "0.3.0"
+
+[[package]]
 name = "profiling"
 version = "1.0.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2956,6 +2934,10 @@ name = "static_assertions"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
+
+[[package]]
+name = "steps"
+version = "0.3.0"
 
 [[package]]
 name = "str"

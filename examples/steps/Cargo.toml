@@ -1,5 +1,5 @@
 [package]
-name = "closure"
+name = "steps"
 version.workspace = true
 edition.workspace = true
 
