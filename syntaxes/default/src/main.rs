@@ -2,6 +2,8 @@ fn main() {
     let a = Foo { x: 8, ..Default::default() };
     println!("{:?}", a);
 }
+
+#[allow(unused)]
 #[derive(Debug)]
 struct Foo {
     size: (u32, u32),

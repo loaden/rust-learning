@@ -1,5 +1,5 @@
 [package]
-name = "e34-trait-ex"
+name = "trait-ex"
 version.workspace = true
 edition.workspace = true
 
