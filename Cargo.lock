@@ -1721,6 +1721,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "memory_align"
+version = "0.3.0"
+
+[[package]]
 name = "metal"
 version = "0.32.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
