@@ -60,6 +60,7 @@ fn main() {
     }
     print_ip_address(IpAddr::V4(10, 35, 96, 1));
     print_ip_address(IpAddr::V6("::1".to_string()));
+
     // 处理像这种类似于元组的传参，还可以使用类似于结构体的传参
     #[allow(unused)]
     enum Event {
@@ -71,7 +72,6 @@ fn main() {
         width: 800,
         height: 600,
     };
-
     match e {
         Event::Click => println!("Clicked!"),
         Event::KeyPress(c) => println!("Key pressed: {}", c),
@@ -98,7 +98,7 @@ fn main() {
         _ => (),
     }
 
-    if let Message::Point { x: 32, y: 66 } = p {
+    if let Message::Point { x: 32, y: 68 } = p {
         println!("if let Message::Point {{ x: 32, y: 66 }} = p");
     }
 

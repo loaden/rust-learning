@@ -4,7 +4,7 @@ fn main() {
     // 显式转换
     println!("显式转换");
     let x = 1.0_f32;
-    let y = 2.0_f32;
+    let y = 2_u32;
     let z = x as i8 + y as i8;
     println!("{}", z);
 
@@ -111,11 +111,13 @@ fn main() {
             }
         }
     };
-    println!("返回值: {}", result); // 输出: 返回值: 3
+    println!("返回值: {}", result);
     // 函数作用域内定义结构体
     println!("函数作用域内定义结构体");
     let s = StructInner;
     s.test();
+    // 同一作用域内不支持函数、结构体遮蔽，遮蔽只针对变量
+    // struct StructInner;
     #[derive(Debug)]
     struct StructInner;
     impl StructInner {
@@ -123,10 +125,9 @@ fn main() {
             dbg!(self);
         }
     }
-    // 同一作用域内不支持函数、结构体遮蔽，遮蔽只针对变量
-    // struct StructInner;
     // const 函数与常量
     println!("const 函数与常量");
+    const X: i32 = add(1, 2);
     println!("const X = {}", X);
     // 胖指针
     println!("胖指针");
@@ -167,5 +168,3 @@ impl StructExample {
 const fn add(x: i32, y: i32) -> i32 {
     x + y
 }
-
-const X: i32 = add(1, 2);

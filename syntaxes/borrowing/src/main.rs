@@ -9,7 +9,7 @@ fn main() {
     println!("借用内容: {}", r);
 
     // 尝试通过不可变借用修改数据会导致编译错误
-    // r.push_str(", world"); // 编译错误！
+    // r.push_str(", world"); // `r` is a `&` reference, so it cannot be borrowed as mutable
 
     // 多个不可变借用可以同时存在
     // 多个不可变借用是安全的，因为它们都只是读取数据，不会造成数据竞争。读取操作本身是线程安全的。
@@ -26,7 +26,7 @@ fn main() {
     let mut s = String::from("hello");
     let r: &mut String = &mut s;
     // 可变借用使用期间，独占所有权
-    // println!("{}", s); // 编译错误！
+    // println!("{}", s); // error[E0502]: cannot borrow `s` as immutable because it is also borrowed as mutable
     r.push_str(", world");
     println!("修改后: {}", r);
     // 修改后可以正常编译
@@ -57,7 +57,7 @@ fn main() {
     println!("不可变借用生命周期内，可变变量失去写权限");
     let mut s: String = String::from("hello");
     let r: &String = &s;
-    // s.push_str(", world"); // 编译报错
+    // s.push_str(", world"); // error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
     println!("{}", r);
     s.push_str(", world"); // 编译通过，因为之后没使用r，r的生命周期已经结束
 
@@ -78,7 +78,7 @@ fn main() {
     let y = &x;
     println!("x = {}", x);
     println!("*y = {}", *y);
-    // assert_eq!(5, y); // 编译错误：不能比较i32和&i32
+    // assert_eq!(5, y); // error[E0277]: can't compare `{integer}` with `&{integer}`
     assert_eq!(5, *y); // 正确：解借用后比较
 
     // 多级借用
