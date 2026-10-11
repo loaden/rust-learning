@@ -2,10 +2,9 @@
 // impl不是struct专属的特性
 // impl可以用于struct、enum、union以及trait object
 fn main() {
-    let mut p = Person::new("zhangsan".to_string(), 18);
+    let mut p = Person::new("张三".to_string(), 18);
     if p.is_adult() {
-        p.say_hello();
-        Person::say_hello(&p); // 等效于 p.say_hello();
+        p.say_hello(); // 等效于 Person::say_hello(&p);
     }
     p.have_birthday();
     println!("{}", p.info());
@@ -14,7 +13,7 @@ fn main() {
     Text::new("hello world!".to_string()).bold().italic().show();
 
     // 方法结束后销毁
-    // 当方法执行完后对象就不再需要时，使用self可以明确表示消费该对象
+    // 当方法执行完后对象不再需要时，使用self可以明确表示消费该对象
     let ticket = Ticket::new("邓紫棋".to_string(), "张三".to_string());
     ticket.read_singer().read_user();
     ticket.use_ticket(); // 消费ticket
@@ -37,7 +36,13 @@ fn main() {
     // 比如Rust没有所谓的类型继承，甚至没有类这个概念，而是组合优先。
     // Rust是一个多范式语言，而不是一个纯面向对象语言。
     let c = Circle { radius: 2.0 };
-    println!("面积 = {}, 周长 = {}, PI = {}, {}", c.area(), c.circumference(), Circle::get_pi(), Circle::PI);
+    println!(
+        "面积 = {}, 周长 = {}, PI = {}, {}",
+        c.area(),
+        c.circumference(),
+        Circle::get_pi(),
+        Circle::PI
+    );
 }
 
 struct Person {
