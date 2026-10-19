@@ -55,7 +55,7 @@ fn main() {
     如果元组包含的类型都实现了 Copy trait，那么这个元组也会实现 Copy trait。
     将变量传递给函数将会触发移动（move）或拷贝（copy），具体取决于变量的类型。
     通过引用（reference）传递变量不会触发移动或拷贝，也叫做借用（borrowing）。
-    对于特定作用域中的特定数据来说，Rust 允许存在唯一可变引用（mutable reference）或者任意数量的不可变引用（immutable reference），但不能同时存在可变引用和不可变引用。
+    对于特定作用域中的特定数据来说，Rust 允许存在唯一可变引用（mutable reference）或者任意数量的不可变引用（immutable reference），但无法共存。
     引用总是有效的，Rust 编译器会在编译时检查引用的有效性，确保引用不会悬空。
     */
     // 切片引用
@@ -133,9 +133,10 @@ fn main() {
     println!("胖指针");
     let p = Box::new(StructExample);
     (*p).test();
-    p.test();
+    p.test(); // 自动解引用，同上
     let mut p = Box::new(2026);
     *p += 1;
+    assert_eq!(*p, 2027);
     println!("胖指针 p = {}, {}", p, *p);
     fn year() -> Box<u16> {
         let year = Box::new(2026);
