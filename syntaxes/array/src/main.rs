@@ -41,6 +41,10 @@ fn main() {
         print!("{},", i);
     }
     println!();
+    for i in arr.iter().rev() {
+        print!("{},", i);
+    }
+    println!();
     for (i, e) in arr.iter().enumerate() {
         println!("index={}, value={}", i, e);
     }
