@@ -49,8 +49,9 @@ fn main() {
     let r1 = &s;
     let r2 = &s;
     println!("{} and {}", r1, r2);
-    // r1 和 r2 在这里不再被使用，生命周期结束
+    // r1 和 r2 此后不再被使用，生命周期结束
     let r3 = &mut s; // 现在可以创建可变借用
+    r3.push_str(", world");
     println!("{}", r3);
 
     // 不可变借用生命周期内，可变变量失去写权限
@@ -69,7 +70,7 @@ fn main() {
     // println!("{}", s); // 编译错误，原变量失去读权限
     r.push_str(", world");
     println!("{}", r);
-    s.push_str(", world"); // 编译通过，因为之后没使用r，r的生命周期已经结束
+    s.push_str(", again"); // 编译通过，因为之后没使用r，r的生命周期已经结束
     println!("{}", s);
 
     // 解借用操作符*获取借用指向的实际值

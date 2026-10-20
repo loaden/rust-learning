@@ -133,7 +133,7 @@ fn main() {
     println!("胖指针");
     let p = Box::new(StructExample);
     (*p).test();
-    p.test(); // 自动解引用，同上
+    p.test(); // 自动解指针，同上
     let mut p = Box::new(2026);
     *p += 1;
     assert_eq!(*p, 2027);
